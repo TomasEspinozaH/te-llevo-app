@@ -1,17 +1,33 @@
-<app-header title="Home"></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Conductores</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
-  <ion-list>
+  <div class="container">
+    <ion-list>
+      <ng-container *ngFor="let pupil of students">
+        <ion-item [routerLink]="['/pupil-page', { id: pupil.id }]" routerLinkActive="router-link-active" detail>
+          <ion-avatar slot="start">
+            <img src="https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg">
+          </ion-avatar>
+          <ion-label>{{pupil.name}}</ion-label>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+  </div>
 
-    <ion-item *ngFor="let pupil of list" [routerLink]="['/pupil-page']" routerLinkActive="router-link-active" detail>
-      <ion-avatar slot="start">
-        <img [src]="pupil.image" />
-      </ion-avatar>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="danger">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
 
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 
-      <ion-label>{{pupil.name}}</ion-label>
-
-
-    </ion-item>
-  </ion-list>
 </ion-content>

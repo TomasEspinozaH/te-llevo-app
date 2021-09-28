@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { STUDENTS } from '../../data/students.data';
 
 @Component({
   selector: 'app-pupil-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PupilPagePage implements OnInit {
 
-  constructor() { }
+  pupil: any;
+
+  constructor(route: ActivatedRoute) {
+    route.params.subscribe(({ id }) =>
+      this.pupil = [...STUDENTS].find(pupil => pupil.id === Number(id))
+    );
+  }
 
   ngOnInit() {
+
   }
+
+
 
 }

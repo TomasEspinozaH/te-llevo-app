@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +10,12 @@ export class HeaderComponent implements OnInit {
 
   @Input() title: string = 'Insert a title';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
+
+  toHome() {
+    this.router.navigateByUrl('home');
+  }
 
 }
