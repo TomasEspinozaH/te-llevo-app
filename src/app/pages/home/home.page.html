@@ -1,0 +1,17 @@
+<app-header title="Home"></app-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item *ngFor="let pupil of list">
+      <ion-avatar slot="start">
+        <img [src]="pupil.image" />
+      </ion-avatar>
+
+
+      <ion-label>{{pupil.name}}</ion-label>
+
+
+    </ion-item>
+  </ion-list>
+</ion-content>
