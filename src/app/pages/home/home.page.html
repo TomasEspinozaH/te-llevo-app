@@ -3,7 +3,7 @@
 <ion-content>
   <ion-list>
 
-    <ion-item *ngFor="let pupil of list">
+    <ion-item *ngFor="let pupil of list" [routerLink]="['/pupil-page']" routerLinkActive="router-link-active" detail>
       <ion-avatar slot="start">
         <img [src]="pupil.image" />
       </ion-avatar>

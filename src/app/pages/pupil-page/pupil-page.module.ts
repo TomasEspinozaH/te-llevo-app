@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { PupilPagePageRoutingModule } from './pupil-page-routing.module';
 
 import { PupilPagePage } from './pupil-page.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PupilPagePageRoutingModule
+    PupilPagePageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PupilPagePage]
 })
-export class PupilPagePageModule {}
+export class PupilPagePageModule { }
