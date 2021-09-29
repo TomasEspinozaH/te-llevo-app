@@ -8,7 +8,7 @@
   <div class="container">
     <ion-list>
       <ng-container *ngFor="let pupil of students">
-        <ion-item [routerLink]="['/pupil-page', { id: pupil.id }]" routerLinkActive="router-link-active" detail>
+        <ion-item [routerLink]="['/pupil-page', { id: pupil.id }]" routerLinkActive="router-link-active">
           <ion-avatar slot="start">
             <img src="https://bysperfeccionoral.com/wp-content/uploads/2020/01/136-1366211_group-of-10-guys-login-user-icon-png.jpg">
           </ion-avatar>
@@ -18,7 +18,7 @@
     </ion-list>
   </div>
 
-  <ion-fab vertical="bottom" horizontal="end">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="danger">
       <ion-icon name="add-outline"></ion-icon>
     </ion-fab-button>
@@ -29,5 +29,6 @@
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>
-
 </ion-content>
+
+<app-footer></app-footer>

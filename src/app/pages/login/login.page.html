@@ -6,18 +6,25 @@
 
 <ion-content>
   <h1 class="title">Te llevo App</h1>
-
-  <div class="container">
+  <form [formGroup]="form" (submit)="login()" class="container">
     <ion-item>
-      <ion-label>Correo: </ion-label>
-      <ion-input type="text" placeholder="correo@correo.cl"></ion-input>
+      <ion-label>Nombre de usuario: </ion-label>
+      <ion-input type="text" placeholder="Juanito_Perez" formControlName="username"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Contraseña: </ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
-    <ion-button expand="block" color="success">Iniciar Sesión</ion-button>
-  </div>
+    <ion-button expand="block" color="success" type="submit">Iniciar Sesión</ion-button>
+    <ion-button fill="outline" size="small" color="danger" (click)="changeFlag()" type="button">Restablecer contraseña</ion-button>
+  </form>
 
+  <ion-item *ngIf="flag">
+    <ion-label>Nombre de usuario: </ion-label>
+    <ion-input type="text" placeholder="Juanito_perez" ></ion-input>
+    <ion-button expand="block" color="success">Enviar</ion-button>
+  </ion-item>
 
 </ion-content>
+
+<app-footer></app-footer>

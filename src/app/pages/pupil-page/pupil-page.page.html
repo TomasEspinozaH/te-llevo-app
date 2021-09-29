@@ -1,11 +1,10 @@
-<app-header [title]="pupil.name"></app-header>
+<app-header title="Conductor"></app-header>
 
 <ion-content>
 
   <ion-card>
-    <img
-      [src]="pupil.image"
-    />
+    <img [src]="pupil.image"/>
+
     <ion-card-content>
       <ion-card-subtitle>{{pupil.car}}</ion-card-subtitle>
       <ion-card-title>Nombre: {{pupil.name}}</ion-card-title>
@@ -16,6 +15,6 @@
       <ion-button expand="block" color="danger">Pedir auto</ion-button>
     </ion-card-content>
   </ion-card>
-
-
 </ion-content>
+
+<app-footer></app-footer>
