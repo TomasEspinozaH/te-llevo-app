@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 
 import { LoadingController } from '@ionic/angular';
-import { alertController } from '@ionic/core';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +44,6 @@ export class LoginPage implements OnInit {
           message: 'Nombre de usuario o contraseña incorrecta',
           buttons: ['Cerrar']
         });
-
         return await alert.present();
       }
 
